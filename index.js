@@ -1,4 +1,9 @@
-module.exports = function(value, cases) {
+module.exports = function(value, cases, options) {
+    options = options || {};
+    if (![true, false].includes(options.autoCall) ) { options.autoCall = true; }
+    if (![true, false].includes(options.autoThrow) ) { options.autoThrow = true; }
+    if (![true, false].includes(options.parseObjectTree) ) { options.parseObjectTree = false; }    
+
     let result;
     if (cases[value]) {
         result = cases[value];
@@ -7,9 +12,9 @@ module.exports = function(value, cases) {
     } else if (cases.default) {
         result = cases.default;
     }
-    if (typeof result === 'function') {
+    if (options.autoCall && typeof result === 'function') {
         return result()
-    } else if (result instanceof Error) {
+    } else if (options.autoThrow && result instanceof Error) {
         throw result
     } else {
         return result
