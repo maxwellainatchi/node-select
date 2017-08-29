@@ -7,9 +7,9 @@ module.exports = function(value, cases, options) {
     let result;
     if (cases[value]) {
         result = cases[value];
-    } else if (cases.default_case && cases[cases.default_case]) {
+    } else if (cases.default_case && cases[cases.default_case] !== undefined) {
         result = cases[cases.default_case];
-    } else if (cases.default) {
+    } else if (cases.default !== undefined) {
         result = cases.default;
     }
     if (options.autoCall && typeof result === 'function') {
