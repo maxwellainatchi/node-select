@@ -1,5 +1,5 @@
 {
-  "name": "select",
+  "name": "select-object",
   "version": "1.0.0",
   "description": "A better switch-case for NodeJS and Javascript",
   "main": "index.js",
