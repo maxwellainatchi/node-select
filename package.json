@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/maxwellainatchi/node-select/issues"
   },
-  "homepage": "https://github.com/maxwellainatchi/node-select#readme"
+  "homepage": "https://github.com/maxwellainatchi/node-select#readme",
+  "devDependencies": {
+    "prettier": "^2.0.4",
+    "typescript": "^3.8.3"
+  }
 }
